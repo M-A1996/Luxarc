@@ -1,0 +1,26 @@
+# ---- core (always needed) ----
+streamlit>=1.44             # the web UI (app.py)
+langgraph>=0.2.0
+langchain-core>=0.3.0
+python-dotenv>=1.0
+pillow>=10.0
+numpy>=1.26
+opencv-python>=4.9          # structure map (Canny) — local & free
+rich>=13.0                  # nicer logs (optional)
+
+# ---- director / critic brain ----
+langchain-ollama>=0.3.0     # local LLM + local vision (private, free)
+langchain-groq>=0.2.0       # optional: Groq llama-3 for the director (free tier)
+
+# ---- redaction (privacy knob #1) ----
+pytesseract>=0.3.10         # OCR to blur title blocks/logos/addresses
+# NOTE: also install the Tesseract engine itself:
+#   Windows -> https://github.com/UB-Mannheim/tesseract/wiki   (then it's on PATH)
+
+# ---- render provider (pick what you use) ----
+huggingface_hub>=0.24       # RENDER_PROVIDER=hf  (free tier)
+requests>=2.31
+fal-client>=0.4           # RENDER_PROVIDER=fal (recommended cloud render)
+# --- RENDER_PROVIDER=local (true ControlNet on your GPU) also needs: ---
+# torch  diffusers>=0.30  transformers  accelerate
+# --- STRUCTURE_TYPE=depth also needs: transformers ---

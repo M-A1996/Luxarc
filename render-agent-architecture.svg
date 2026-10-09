@@ -1,0 +1,114 @@
+<svg viewBox="0 0 920 600" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <title>Architectural Render Agent — architecture &amp; privacy boundary</title>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7b8794"/>
+    </marker>
+    <marker id="arB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arL" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0672e"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="920" height="600" fill="#ffffff"/>
+  <style>
+    .g   { fill:#e4efe6; stroke:#2f7d4f; stroke-width:1.5; }
+    .b   { fill:#eaf1fd; stroke:#2563eb; stroke-width:1.5; }
+    .n   { fill:#f6f7f9; stroke:#c3ccd6; stroke-width:1.4; }
+    .t   { fill:#17324d; font-weight:700; }
+    .s   { fill:#5f6b7a; font-size:11px; }
+    .tag { font-size:9.5px; font-weight:700; letter-spacing:.3px; }
+    .fl  { stroke:#7b8794; stroke-width:1.8; fill:none; }
+    .flB { stroke:#2563eb; stroke-width:1.8; fill:none; }
+    .dash{ stroke:#2563eb; stroke-width:1.6; fill:none; stroke-dasharray:5 4; }
+    .loop{ stroke:#c0672e; stroke-width:1.8; fill:none; stroke-dasharray:5 4; }
+  </style>
+
+  <!-- input -->
+  <rect class="n" x="230" y="24" width="340" height="46" rx="9"/>
+  <text class="t" x="400" y="44" text-anchor="middle" font-size="13">Architect input</text>
+  <text class="s" x="400" y="60" text-anchor="middle">3D-model image + “make it dusk, Scandinavian, add trees”</text>
+  <path class="fl" d="M400,70 L400,86" marker-end="url(#ar)"/>
+
+  <!-- 1 redact -->
+  <rect class="g" x="230" y="86" width="340" height="58" rx="9"/>
+  <text class="tag" x="246" y="104" fill="#2f7d4f">1 · LOCAL</text>
+  <text class="t" x="400" y="120" text-anchor="middle" font-size="13">Redact</text>
+  <text class="s" x="400" y="137" text-anchor="middle">blur logos · addresses · title blocks  (knob #1)</text>
+  <path class="fl" d="M400,144 L400,160" marker-end="url(#ar)"/>
+
+  <!-- 2 structure -->
+  <rect class="g" x="230" y="160" width="340" height="58" rx="9"/>
+  <text class="tag" x="246" y="178" fill="#2f7d4f">2 · LOCAL</text>
+  <text class="t" x="400" y="194" text-anchor="middle" font-size="13">Structure map</text>
+  <text class="s" x="400" y="211" text-anchor="middle">faceless line / depth — shape only</text>
+  <path class="flB" d="M400,218 L400,250" marker-end="url(#arB)"/>
+  <text class="s" x="400" y="238" text-anchor="middle" fill="#2563eb">structure map + prompt + request (text)</text>
+
+  <!-- dashed "leaves" box around 3 + 4 -->
+  <rect class="dash" x="208" y="252" width="384" height="150" rx="12"/>
+  <text class="tag" x="216" y="266" fill="#2563eb">↓ ONLY THESE LEAVE — CLOUD, FREE TIER (no-train)</text>
+
+  <!-- 3 interpret -->
+  <rect class="b" x="230" y="274" width="340" height="56" rx="9"/>
+  <text class="tag" x="246" y="291" fill="#2563eb">3 · CLOUD · GROQ llama-3</text>
+  <text class="t" x="400" y="307" text-anchor="middle" font-size="12.5">Interpret</text>
+  <text class="s" x="400" y="323" text-anchor="middle">words → render prompt / settings  (text only)</text>
+  <path class="flB" d="M400,330 L400,346" marker-end="url(#arB)"/>
+
+  <!-- 4 render -->
+  <rect class="b" x="230" y="346" width="340" height="56" rx="9"/>
+  <text class="tag" x="246" y="363" fill="#2563eb">4 · CLOUD · HF / fal  (diffusion + ControlNet)</text>
+  <text class="t" x="400" y="379" text-anchor="middle" font-size="12.5">Render</text>
+  <text class="s" x="400" y="395" text-anchor="middle">paints the shape · structure map + prompt only</text>
+
+  <path class="fl" d="M400,402 L400,430" marker-end="url(#ar)"/>
+  <text class="s" x="400" y="422" text-anchor="middle" fill="#7b8794">render image comes back</text>
+
+  <!-- 5 critique -->
+  <rect class="g" x="230" y="430" width="340" height="58" rx="9"/>
+  <text class="tag" x="246" y="448" fill="#2f7d4f">5 · LOCAL · VISION</text>
+  <text class="t" x="400" y="464" text-anchor="middle" font-size="13">Critique</text>
+  <text class="s" x="400" y="481" text-anchor="middle">scores its own render  (nothing leaves)</text>
+  <path class="fl" d="M400,488 L400,506" marker-end="url(#ar)"/>
+  <text class="s" x="470" y="502" fill="#2f7d4f">good enough →</text>
+
+  <!-- 6 deliver -->
+  <rect class="g" x="230" y="506" width="340" height="56" rx="9"/>
+  <text class="tag" x="246" y="523" fill="#2f7d4f">6 · LOCAL</text>
+  <text class="t" x="400" y="539" text-anchor="middle" font-size="13">Deliver</text>
+  <text class="s" x="400" y="555" text-anchor="middle">upscale + save → output/</text>
+
+  <!-- refine loop 5 -> 4 -->
+  <path class="loop" d="M570,458 C614,458 614,376 572,376" marker-end="url(#arL)"/>
+  <text class="tag" x="584" y="414" fill="#c0672e">refine</text>
+  <text class="s" x="584" y="428" fill="#c0672e" font-size="10">score low ×2</text>
+
+  <!-- ===== right panel ===== -->
+  <rect class="n" x="646" y="86" width="256" height="150" rx="10"/>
+  <text class="t" x="662" y="108" font-size="12.5">What leaves (cloud mode)</text>
+  <text class="s" x="662" y="128">✓ structure map (shape only)</text>
+  <text class="s" x="662" y="146">✓ text prompt</text>
+  <text class="s" x="662" y="164">✓ request text (to Groq)</text>
+  <text class="s" x="662" y="188" fill="#b4472e" font-weight="700">Never leaves:</text>
+  <text class="s" x="662" y="206" fill="#b4472e">original image · materials · colours</text>
+  <text class="s" x="662" y="222" fill="#b4472e">context · logos · addresses · client</text>
+
+  <!-- legend -->
+  <rect class="n" x="646" y="252" width="256" height="92" rx="10"/>
+  <rect x="662" y="268" width="14" height="14" rx="3" class="g"/>
+  <text class="s" x="684" y="279">on your machine · private / free</text>
+  <rect x="662" y="292" width="14" height="14" rx="3" class="b"/>
+  <text class="s" x="684" y="303">cloud · free tier (Groq / HF)</text>
+  <path class="loop" d="M663,324 L679,324"/>
+  <text class="s" x="684" y="328">self-correcting refine loop</text>
+
+  <!-- note -->
+  <rect class="n" x="646" y="360" width="256" height="94" rx="10"/>
+  <text class="s" x="662" y="382" font-weight="700" fill="#17324d">Note</text>
+  <text class="s" x="662" y="401">Groq = the brain (free): interpret</text>
+  <text class="s" x="662" y="418">+ optional vision critic. It CANNOT</text>
+  <text class="s" x="662" y="435">render — diffusion runs on HF / fal /</text>
+  <text class="s" x="662" y="450">local.</text>
+</svg>
