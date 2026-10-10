@@ -9,6 +9,8 @@ and client names **never leave**.
 
 > **Status: work in progress.** The agent pipeline (redact → structure map → interpret → critique loop) is built and runs end to end on the text/structure steps. The cloud render step (fal.ai ControlNet) and the local vision critic are being wired up and tested; local rendering needs an NVIDIA GPU. Expect rough edges — see the roadmap below.
 
+![Luxarc architecture: redact, structure map, interpret, render, critique loop](render-agent-architecture.png)
+
 ## The agent (self-correcting loop)
 ```
 redact -> structure map -> interpret -> render -> critique
